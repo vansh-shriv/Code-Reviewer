@@ -1,3 +1,7 @@
+# IMP: for now python files are working fine, for js file I am working on it and some minor improvements.
+# for now , basic structure is there , will imporve the UI/UX 
+
+
 # Offline Code Reviewer
 
 A local web application that provides code review suggestions based on static analysis for JavaScript and Python files.
@@ -78,7 +82,6 @@ def foo():
     return x
 ```
 
-The app will flag:
+The web-app will flag:
 - `sys` is an unused import
-- Function name `foo` could be more descriptive
 - Variable `x` and `y` have short names
