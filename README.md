@@ -1,5 +1,5 @@
-# IMP: for now python files are working fine, for js file I am working on it and some minor improvements.
-# for now , basic structure is there , will imporve the UI/UX 
+IMP: for now python files are working fine, for js file I am working on it and some minor improvements.
+for now , basic structure is there , will imporve the UI/UX 
 
 
 # Offline Code Reviewer
