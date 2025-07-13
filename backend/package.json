@@ -1,0 +1,12 @@
+{
+  "name": "offline-ai-code-reviewer-backend",
+  "version": "1.0.0",
+  "description": "Backend for Offline AI Code Reviewer",
+  "main": "app.py",
+  "dependencies": {
+    "esprima": "^4.0.1"
+  },
+  "scripts": {
+    "install-deps": "npm install"
+  }
+} 
