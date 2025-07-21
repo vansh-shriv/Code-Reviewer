@@ -69,19 +69,3 @@ A local web application that provides code review suggestions based on static an
 3. View the code content and analysis results
 4. Review issues in the side panel with line numbers and suggestions
 
-## Example
-
-Upload this Python file:
-```python
-import os
-import sys
-
-def foo():
-    x = 1
-    y = 2
-    return x
-```
-
-The web-app will flag:
-- `sys` is an unused import
-- Variable `x` and `y` have short names

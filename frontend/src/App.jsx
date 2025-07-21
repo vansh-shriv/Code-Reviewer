@@ -3,6 +3,7 @@ import FileUpload from './components/FileUpload'
 import CodeViewer from './components/CodeViewer'
 import IssuePanel from './components/IssuePanel'
 import Header from './components/Header'
+const API = import.meta.env.VITE_API_URL;
 
 function App() {
   const [fileData, setFileData] = useState(null)
@@ -18,7 +19,7 @@ function App() {
       const formData = new FormData()
       formData.append('file', file)
       
-      const response = await fetch('/api/analyze', {
+      const response = await fetch(`${API}/analyze`, {
         method: 'POST',
         body: formData,
       })

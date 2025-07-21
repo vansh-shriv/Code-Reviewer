@@ -158,12 +158,12 @@ class JavaScriptAnalyzer(BaseAnalyzer):
                 f'''
                 const esprima = require('esprima');
                 const fs = require('fs');
-                const code = fs.readFileSync('{temp_file_path}', 'utf8');
+                const code = fs.readFileSync({json.dumps(temp_file_path)}, 'utf8');
                 try {{
                     const ast = esprima.parse(code, {{ loc: true, range: true }});
                     console.log(JSON.stringify(ast));
                 }} catch (error) {{
-                    console.error(JSON.stringify({{ error: error.message, line: error.lineNumber }}));
+                    console.log(JSON.stringify({{ error: error.message, line: error.lineNumber }}));
                 }}
                 '''
             ], capture_output=True, text=True, timeout=10)
@@ -171,10 +171,15 @@ class JavaScriptAnalyzer(BaseAnalyzer):
             # Clean up temporary file
             os.unlink(temp_file_path)
             
-            if result.returncode != 0:
-                raise Exception(f"esprima parsing failed: {result.stderr}")
-            
-            return json.loads(result.stdout)
+            # Try to parse stdout as JSON
+            try:
+                return json.loads(result.stdout)
+            except json.JSONDecodeError:
+                # If stdout is not valid JSON, try stderr
+                try:
+                    return json.loads(result.stderr)
+                except json.JSONDecodeError:
+                    raise Exception("Failed to parse esprima output. Stdout: {} Stderr: {}".format(result.stdout, result.stderr))
             
         except subprocess.TimeoutExpired:
             raise Exception("JavaScript parsing timed out")
