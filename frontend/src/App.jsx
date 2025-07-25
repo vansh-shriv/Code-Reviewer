@@ -3,7 +3,8 @@ import FileUpload from './components/FileUpload'
 import CodeViewer from './components/CodeViewer'
 import IssuePanel from './components/IssuePanel'
 import Header from './components/Header'
-const API = import.meta.env.VITE_API_URL;
+const API = import.meta.env.VITE_API_BASE;
+
 
 function App() {
   const [fileData, setFileData] = useState(null)
@@ -19,7 +20,7 @@ function App() {
       const formData = new FormData()
       formData.append('file', file)
       
-      const response = await fetch("https://code-reviewer-xx9q.onrender.com//analyze", {
+      const response = await fetch(`${API}/api/analyze`, {
         method: 'POST',
         body: formData,
       })

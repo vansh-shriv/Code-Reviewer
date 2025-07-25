@@ -1,11 +1,12 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import os
-import ast
-import json
-import re
+# import ast
+# import json
+# import re
 from werkzeug.utils import secure_filename
 from code_analyzer import PythonAnalyzer, JavaScriptAnalyzer
+
 
 app = Flask(__name__)
 CORS(app,origins=["https://code-reviewer-ahpf.vercel.app"])

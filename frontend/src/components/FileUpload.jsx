@@ -30,7 +30,7 @@ function FileUpload({ onFileUpload, loading, error }) {
     const fileExtension = '.' + file.name.split('.').pop().toLowerCase()
     
     if (!allowedTypes.includes(fileExtension)) {
-      alert('Please select a .js or .py file')
+      alert('Please select a .py file')
       return
     }
     
@@ -51,7 +51,7 @@ function FileUpload({ onFileUpload, loading, error }) {
 
   const getFileIcon = (filename) => {
     const ext = filename.split('.').pop().toLowerCase()
-    return ext === 'py' ? '🐍' : '📄'
+    return ext === 'py' ? '🐍' : ''
   }
 
   return (
