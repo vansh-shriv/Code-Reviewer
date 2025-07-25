@@ -3,7 +3,7 @@ import FileUpload from './components/FileUpload'
 import CodeViewer from './components/CodeViewer'
 import IssuePanel from './components/IssuePanel'
 import Header from './components/Header'
-const API = import.meta.env.VITE_API_BASE;
+const API = import.meta.env.VITE_API_URL;
 
 
 function App() {
