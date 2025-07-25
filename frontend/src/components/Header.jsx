@@ -9,7 +9,7 @@ function Header() {
             🎯 Offline AI Code Reviewer
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Upload your JavaScript or Python files and get instant code review suggestions 
+            Upload your Python files and get instant code review suggestions 
             based on static analysis. No external APIs required - everything runs locally!
           </p>
         </div>

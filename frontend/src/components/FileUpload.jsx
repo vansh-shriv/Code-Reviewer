@@ -61,7 +61,7 @@ function FileUpload({ onFileUpload, loading, error }) {
           Upload Your Code File
         </h2>
         <p className="text-gray-600">
-          Drag and drop or click to select a .js or .py file
+          Drag and drop or click to select a .py file
         </p>
       </div>
 
@@ -93,7 +93,7 @@ function FileUpload({ onFileUpload, loading, error }) {
               </label>
             </p>
             <p className="text-sm text-gray-500">
-              Supported formats: .js, .py
+              Supported formats: .py
             </p>
           </div>
         ) : (
