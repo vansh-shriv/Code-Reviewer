@@ -19,7 +19,7 @@ function App() {
       const formData = new FormData()
       formData.append('file', file)
       
-      const response = await fetch(`${API}/api/analyze`, {
+      const response = await fetch(`${API}/analyze`, {
         method: 'POST',
         body: formData,
       })

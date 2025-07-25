@@ -8,7 +8,7 @@ from werkzeug.utils import secure_filename
 from code_analyzer import PythonAnalyzer, JavaScriptAnalyzer
 
 app = Flask(__name__)
-CORS(app)
+CORS(app,origins=["https://code-reviewer-ahpf.vercel.app"])
 
 # Configure upload folder
 UPLOAD_FOLDER = 'uploads'
